@@ -1,30 +1,20 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+    <div id="App">
+      <aside>
+        <div class="logo"><img src="./assets/imgs/brandlogo.png" alt="Logo"></div>
+        <nav>
+          <router-link class="pets" to="/">Pets</router-link>
+          <router-link class="npet" :to="{ name: 'Pet', params : {id : 0}}">Add pet</router-link>
+        </nav>
+      </aside>
+      <section>
+        <header class="adm-bar">
+          <div class="f-right">
+            <h3 class="t-dgb">Admin</h3>
+            <button class="z-sm b-lgb">Fitu Pets</button>
+          </div>
+        </header>
+        <router-view/>
+      </section>
+    </div>
 </template>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
